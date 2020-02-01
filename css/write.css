@@ -1,0 +1,36 @@
+@charset 'utf-8';
+
+.writer_wrap{
+    width: 70%;
+    margin:0 auto;
+}
+
+.write .title{
+    width:150px;
+    display: inline-block;
+    margin-bottom: 30px;
+    font-weight: 700;
+    vertical-align: top;
+}
+
+.write input{
+    width:590px;
+}
+
+.contentInput{
+    height: 300px;
+}
+
+/* button */
+
+.writer_button{
+    text-align: right;
+    margin-right: 50px;
+    margin-top:20px;
+}
+.write .button_nomal.cancel{
+    background-color: #a5a5a5;
+}
+.write .button_nomal.clear{
+    background-color: #5b9bd5;
+}

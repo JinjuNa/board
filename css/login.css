@@ -45,9 +45,10 @@ h2{
 }
 
 .input_button_login_wrap{
-    width: fit-content;
+    width: 390px;
     margin:30px auto;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
+    padding-bottom: 50px;
 }
 
 .login .button_small{
@@ -58,4 +59,9 @@ h2{
     width:fit-content;
     margin:0 auto;
     padding-bottom: 50px;
+}
+
+/* alert */
+.login .container_alert{
+    display: none;
 }

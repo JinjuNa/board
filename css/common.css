@@ -61,18 +61,21 @@ header{
     display: inline-block;
     /* background-color: lightcoral; */
     border-radius: 50%;
+    background-size: cover;
+    background-position: center;  
+    background-repeat: no-repeat;
+    background-image: url(../img/login_empty.png);
     
 }
 
 .login_on #loginImg{
-    background-image: url(../img/loginImg1.jpg);
-    background-size: cover;
-    background-position: center;  
-    background-repeat: no-repeat;
+    /* background-image: url(../img/loginImg1.jpg); */
+    
 }
 
 .login_off #loginImg{
-    background-color: goldenrod;
+    /* background-color: goldenrod; */
+    /* background-image: url(../img/login_empty.png); */
 }
 
 /* loginPop */

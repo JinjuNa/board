@@ -1,18 +1,12 @@
 <?php
 
- if(!isset($_POST['is_ajax'])) exit;
-//무슨의미지 isset 있는지 없는지.
- if(!isset($_POST['Id'])) exit;
- if(!isset($_POST['Pw'])) exit;
-//$_POST ... javscript ... html
-//input으로 입력받은값
+        if(!isset($_POST['is_ajax'])) exit;
+        if(!isset($_POST['Id'])) exit;
+        if(!isset($_POST['Pw'])) exit;
 
-
-$is_ajax = $_POST['is_ajax'];
-$Id = $_POST['Id'];
-$Pw = $_POST['Pw'];
-
-//이부분은 mysql 연동해야할것 같은데.
+        $is_ajax = $_POST['is_ajax'];
+        $Id = $_POST['Id'];
+        $Pw = $_POST['Pw'];
 
         $host = 'localhost';
         $user = 'root';
@@ -29,22 +23,18 @@ $Pw = $_POST['Pw'];
         $select_data = mysqli_query($mysqli, $sql);
         $row = mysqli_fetch_array($select_data);
 
-        if($row){
-            
-            $jsonData = array(
-                'success'=>true,
-                'loginUserId'=>$Id,
-                'name'=>$row['Name'],
-                'img'=>$row['Img']
-              );
+        $jsonData = array(
+            'success'=>false,
+            'loginUserId'=>$Id,
+            'name'=>$row['Name'],
+            'img'=>$row['Img']
+          );
 
-            echo(json_encode($jsonData));
-            // echo(json_encode(array("success" => true, "loginUserId" => $Id, "name" => $row['Name'], "img" => $row['Img'])));
-            //header("Location:login.php?json=$jsonData");
-            //  echo "success";
-        }else{
-            echo "fail";
+        if($row){
+            $jsonData['success'] = true;
         }
+
+        echo(json_encode($jsonData));
         
 
 ?>

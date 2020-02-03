@@ -65,3 +65,8 @@ h2{
 .login .container_alert{
     display: none;
 }
+
+/* hidden */
+.hidden {
+    display: hidden;
+}

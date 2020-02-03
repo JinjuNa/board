@@ -15,6 +15,7 @@ $(document).ready(function(){
             data : form_data,
             dataType : 'json',
             success : function(result){
+                console.log(result)
                 var data = result;
                 if(result.success){
                     console.log(result);
@@ -29,8 +30,9 @@ $(document).ready(function(){
                 }
                 else{
                     console.log(result);
-                    $("#message").html("<p class='error'>아이디 또는 비밀번호가 잘못되었습니다.</p>");
-                    $("#message").show();
+                    // $("#message").html("<p class='error'>아이디 또는 비밀번호가 잘못되었습니다.</p>");
+                    // $("#message").show();
+                    alert('아이디 또는 비밀번호가 잘못되었습니다.');
                 }
             }
         });

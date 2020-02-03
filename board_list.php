@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/board.css">
     <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/loginPop.js"></script>
 </head>
 <body>
     <div id="wrap">
@@ -106,28 +107,5 @@
             </div>
         </section>
     </div>
-
-    <script>
-        var data_img = document.getElementById("loginImg").dataset.img;
-        console.log(data_img);
-
-        $("#loginImg").css({"background-image" : "url(./img/"+data_img+")"});
-        $("#loginPopImg").css({"background-image" : "url(./img/"+data_img+")"});
-        // $("#nd01".css({"background":"url(img.png)"}); 
-        $(document).on("click", "#loginImg", function(){
-            $("#loginPop").slideToggle("fast");
-        });
-
-        $("#logout").click(function(){
-            var ans  = confirm("정말 로그아웃 하시겠습니까?");
-
-            if(ans){
-                location.replace('login.php');
-            }else{
-                //nothing
-            }
-        })
-
-    </script>
 </body>
 </html>

@@ -1,12 +1,12 @@
 <?php
 
         if(!isset($_POST['is_ajax'])) exit;
-        if(!isset($_POST['Id'])) exit;
-        if(!isset($_POST['Pw'])) exit;
+        if(!isset($_POST['id'])) exit;
+        if(!isset($_POST['pw'])) exit;
 
         $is_ajax = $_POST['is_ajax'];
-        $Id = $_POST['Id'];
-        $Pw = $_POST['Pw'];
+        $id = $_POST['id'];
+        $pw = $_POST['pw'];
 
         $host = 'localhost';
         $user = 'root';
@@ -19,15 +19,16 @@
             die('Connect Error: '.$mysqli->connect_error);
         }
 
-        $sql = "select * from login where UserId = '$Id' and Pw = '$Pw'";
+        $sql = "select * from login where userId = '$id' and pw = '$pw'";
         $select_data = mysqli_query($mysqli, $sql);
         $row = mysqli_fetch_array($select_data);
 
         $jsonData = array(
             'success'=>false,
-            'loginUserId'=>$Id,
-            'name'=>$row['Name'],
-            'img'=>$row['Img']
+            'loginUserId'=>$id,
+            'id'=>$row['id'],
+            'name'=>$row['name'],
+            'img'=>$row['img']
           );
 
         if($row){

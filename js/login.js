@@ -2,16 +2,16 @@ $(document).ready(function(){
     $("#login").click(function(){
         var action = $("#loginform").attr("action");
         var form_data = {
-            Id : $("#inputLoginId").val(),
-            Pw : $("#inputLoginPw").val(),
+            id : $("#inputLoginId").val(),
+            pw : $("#inputLoginPw").val(),
             is_ajax : 1
         };
 
-        if(form_data.Id==''){
+        if(form_data.id==''){
             alert("아이디가 입력되지 않았습니다.");
             return false;
         } 
-        if(form_data.Pw==''){
+        if(form_data.pw==''){
             alert("비밀번호가 입력되지 않았습니다.");
             return false;
         }

@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['loginUserId'])){
+        echo "<script>alert('로그인 후 이용 가능합니다'); location.href='./login.php';</script>";
+        exit;
+    }
+?>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
@@ -16,17 +24,16 @@
 
             <span class="loginInfo">
                 <span id="loginId">
-                <?php echo $_POST['loginUserId']?>
+                <?php echo $_SESSION['loginUserId'];?>
                 </span>
 
-                <span id="loginImg" data-img=<?php echo $_POST['img']?>></span>
+                <span id="loginImg" data-img=<?php echo $_SESSION['img']?>></span>
             </span>
 
             <div class="loginPop" id="loginPop">
                 <div id="loginPopImg"></div>
-                <div id="loginPopName"><?php echo $_POST['name']?></div>
-                <div id="loginPopId"><?php echo $_POST['loginUserId']?></div>
-                <!-- <div class="login_edit"><a href="#">회원정보수정</a></div> -->
+                <div id="loginPopName"><?php echo $_SESSION['name'];?></div>
+                <div id="loginPopId"><?php echo $_SESSION['loginUserId'];?></div>
                 <button id="logout" class="button_small">로그아웃</button>
             </div>
         </header>

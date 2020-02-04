@@ -17,27 +17,7 @@
 </head>
 <body>
     <div id="wrap">
-        <header class="login_on">
-            <h1 class="logo">
-                <a href="#">DINDOO</a>
-            </h1>
-
-            <span class="loginInfo">
-                <span id="loginId">
-                <?php echo $_SESSION['loginUserId'];?>
-                </span>
-
-                <span id="loginImg" data-img=<?php echo $_SESSION['img']?>></span>
-            </span>
-
-            <div class="loginPop" id="loginPop">
-                <div id="loginPopImg"></div>
-                <div id="loginPopName"><?php echo $_SESSION['name'];?></div>
-                <div id="loginPopId"><?php echo $_SESSION['loginUserId'];?></div>
-                <button id="logout" class="button_small">로그아웃</button>
-            </div>
-        </header>
-
+        <?php require 'header.php' ?>
         <section class="board">
             <div class="container">
             <h3>자유게시판</h3>
@@ -89,7 +69,7 @@
                 </table>
                 </div>
 
-                <button id="write" class="button_nomal">글쓰기</button>
+                <button id="write" class="button_nomal" onclick="location.href='board_write.php'">글쓰기</button>
 
                 <ul class="pager">
                     <li>1</li>
